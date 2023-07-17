@@ -1,0 +1,130 @@
+<style>
+    .form-position {
+        position: absolute;
+        top: 14vh;
+        left: 13px;
+    }
+    /* ::placeholder {
+    color: whitesmoke !important;
+  } */
+    .form-control {
+        /* color: whitesmoke !important; */
+        outline: none;
+        background: #ffffff;
+        border: none;
+        /* border-bottom: 2px solid #c57ee4; */
+        border-radius: 14px;
+    }
+    .form-control:focus {
+        outline: none !important;
+        background: #ffffff;
+        border: none;
+        /* border-bottom: 2px solid #c57ee4; */
+    }
+    .btn-submit {
+        /* background-color: #b800c8; */
+        /* color: whitesmoke; */
+        outline: none;
+        border: none;
+    }
+    .modal-content {
+        width: 320px;
+        border: none;
+        background: none;
+    }
+    #cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #ffffff91;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        display: none;
+        backdrop-filter: blur(10px);
+    }
+    #contact-form {
+        z-index: 6;
+    }
+    #videoCam {
+        width: 200px;
+        border-radius: 100%;
+    }
+    .title-one {
+        font-weight: 700;
+        font-size: 21px;
+    }
+    .title-two {
+        font-weight: 600;
+    }
+    .button-div {
+        width: 100%;
+        background-color: #ffffff8f;
+        border-radius: 27px;
+    }
+    .btn-circle {
+        border-radius: 100% !important;
+        background: #f6f6f6;
+        padding: 12px 15px;
+    }
+    .btn-connect {
+        background: #f6f6f6;
+        border-radius: 20px 20px 20px 20px;
+    }
+</style>
+<div id="cover"></div>
+<div class="form-position" id="contact-form" style="display: none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <span class="title-one">We are here to support you!</span>
+                    </div>
+                    <div class="form-group">
+                        <span class="title-two">
+                            Inorder to get started, we'd like to collect some information.
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input name="name" type="text" class="form-control shadow-lg" placeholder="Your name"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="email" type="text" class="form-control shadow-lg" placeholder="Work email"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="phone_no" type="text" class="form-control shadow-lg" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="company" type="text" class="form-control shadow-lg" placeholder="Company"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="designation" type="text" class="form-control shadow-lg" placeholder="Designation"/>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="2" type="text" class="form-control shadow-lg" name="message" placeholder="Tell us how can we helo you?"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group button-div row p-2">
+                    <button type="button" class="btn btn-submit btn-circle col-2 mr-2 shadow-lg" onclick="closeModal()">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+                    <button type="button" class="btn btn-submit btn-circle col-2 mr-2 shadow-lg" onclick="openCam()">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button type="button" class="btn btn-submit col btn-connect shadow-lg" onclick="submit()">
+                        <i class="fa fa-headphones" aria-hidden="true"></i>
+                        connect
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
